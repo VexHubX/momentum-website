@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090c">
+  <title>Vexhub Admin</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="../config.js" defer></script>
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <header class="admin-topbar"><a class="brand" href="../"><span class="brand-mark">V</span><span>VEXHUB<span>.</span></span></a><a href="../" class="back-link">← Public library</a></header>
+  <main class="admin-main">
+    <section id="login-view" class="auth-card">
+      <p class="eyebrow">RESTRICTED ACCESS</p><h1>Admin sign in<span>.</span></h1><p class="muted">Sign in with the authorized Vexhub admin account.</p>
+      <form id="login-form"><label for="email">Email</label><input id="email" type="email" autocomplete="username" required><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required><p id="login-error" class="error" role="alert"></p><button class="primary" type="submit">Sign in securely</button></form>
+      <p class="security-note">Admin access is verified by Supabase Auth and database row-level security. No password is stored in this site.</p>
+    </section>
+    <section id="denied-view" class="auth-card hidden"><p class="eyebrow">ACCESS DENIED</p><h1>Not authorized<span>.</span></h1><p class="muted">This account is authenticated but is not on the Vexhub admin allowlist.</p><button id="denied-signout" class="secondary" type="button">Sign out</button></section>
+    <section id="dashboard-view" class="dashboard hidden"><div class="dashboard-heading"><div><p class="eyebrow">CONTENT MANAGEMENT</p><h1>Script dashboard<span>.</span></h1><p class="muted">Manage published scripts and drafts.</p></div><button id="signout" class="secondary" type="button">Sign out</button></div>
+      <div class="dashboard-toolbar"><span id="admin-count" class="muted">Loading scripts…</span><button id="new-script" class="primary" type="button">＋ New script</button></div>
+      <div id="admin-list" class="admin-list" aria-live="polite"><div class="loading">Loading dashboard…</div></div>
+    </section>
+  </main>
+  <dialog id="script-dialog" class="editor-dialog"><form id="script-form" method="dialog"><div class="dialog-heading"><div><p class="eyebrow">SCRIPT DETAILS</p><h2 id="dialog-title">New script</h2></div><button type="button" class="icon-button" id="close-dialog" aria-label="Close">×</button></div>
+    <input id="script-id" type="hidden"><label for="script-title">Title</label><input id="script-title" maxlength="100" required>
+    <label for="script-description">Description</label><textarea id="script-description" rows="3" maxlength="500" required></textarea>
+    <div class="two-col"><div><label for="script-category">Category</label><input id="script-category" maxlength="40" placeholder="e.g. Studio utility" required></div><div><label for="script-tags">Tags <span>(comma separated)</span></label><input id="script-tags" maxlength="200" placeholder="lua, utility"></div></div>
+    <label for="script-code">Code</label><textarea id="script-code" class="code-input" rows="10" spellcheck="false" autocapitalize="off" autocomplete="off" required></textarea>
+    <label class="publish-toggle"><input id="script-published" type="checkbox"><span>Publish in public library</span></label>
+    <p class="form-hint">Publish only code intended for authorized Roblox Studio development. Review every script before publishing.</p>
+    <p id="form-error" class="error" role="alert"></p><div class="dialog-actions"><button id="cancel-edit" class="secondary" type="button">Cancel</button><button id="save-script" class="primary" type="submit">Save script</button></div>
+  </form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
