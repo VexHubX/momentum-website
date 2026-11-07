@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+# Never commit Supabase service-role/secret keys, passwords, or credentials.

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#09090c">
+  <meta name="description" content="VEXHUB — a community library for authorized Roblox Studio scripts and resources."><title>VEXHUB — Roblox Script Library</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script><script src="config.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+  <div class="glow glow-a" aria-hidden="true"></div><div class="glow glow-b" aria-hidden="true"></div>
+  <header class="topbar"><a class="brand" href="./" aria-label="VEXHUB home"><span class="brand-mark">V</span><span>VEXHUB<span class="red">.</span></span></a>
+    <nav aria-label="Main navigation"><a class="nav-link active" href="#library">Library</a><a class="nav-link" href="#about">About</a></nav><a class="admin-link" href="admin/">Admin <span>↗</span></a>
+  </header>
+  <main>
+    <section class="hero"><div class="hero-copy"><p class="eyebrow"><i></i> COMMUNITY SCRIPT LIBRARY</p><h1>CREATE<br><span>WITHOUT LIMITS.</span></h1><p class="hero-subtitle">A curated hub for useful Roblox Studio scripts, creator tools, and development resources.</p><a class="cta" href="#library">Explore the library <span>↓</span></a></div>
+      <div class="hero-art" aria-hidden="true"><div class="ring ring-one"></div><div class="ring ring-two"></div><div class="emblem">V<span>H</span></div><div class="code-float"><span>-- VEXHUB / STUDIO</span><br><b>local</b> project = <strong>"yours"</strong><br>build(project)<i>_</i></div><span class="art-caption">CREATE · SHARE · LEARN</span></div>
+    </section>
+    <section class="section library" id="library"><div class="section-title"><div><p class="eyebrow">THE COLLECTION</p><h2>Script library<span class="red">.</span></h2></div><span id="result-count" class="result-count">Loading…</span></div>
+      <div class="controls"><label class="search"><span aria-hidden="true">⌕</span><span class="sr-only">Search scripts</span><input id="search" type="search" placeholder="Search scripts, tags, categories…" autocomplete="off"><kbd>/</kbd></label><div id="categories" class="filters" aria-label="Filter by category"><button class="chip selected" type="button" data-category="all" aria-pressed="true">All scripts</button></div></div>
+      <div id="script-grid" class="grid" aria-live="polite"><div class="state"><span class="loader"></span><p>Loading scripts…</p></div></div>
+      <p class="note">Only run code you understand and are authorized to use. Scripts are provided by their publishers.</p>
+    </section>
+    <section class="section about" id="about"><div class="about-mark">VH<span>.</span></div><div><p class="eyebrow">MADE FOR CREATORS</p><h2>Build responsibly.<br>Share what you learn.</h2><p>VEXHUB is a community library for scripts intended for Roblox Studio development, learning, and experiences you own or have permission to modify. Review code before using it.</p></div></section>
+  </main>
+  <footer class="footer"><a class="brand" href="./"><span class="brand-mark">V</span><span>VEXHUB<span class="red">.</span></span></a><span>Community-built. Creator-focused.</span><span>© <span id="year"></span> VEXHUB</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
